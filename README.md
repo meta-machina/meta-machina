@@ -1,10 +1,10 @@
-# Name of Machine
-Explanation of the Machine
+# Meta Machina
+This machine creates machines.
 <pre>
-  pip install name-of-the-machine
+  pip install meta-machina
 </pre>
 Then:
 ```Python
   # Python
-  import name_of_the_machine
+  import meta_machina
 ```

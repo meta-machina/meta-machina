@@ -10,20 +10,18 @@ import yaml
 import ruamel.yaml as ryaml
 
 
-MACHINE_ORGANIZATION_NAME = 'name-of-the-machine'  # or other organization
-PRIVATE_REPO_WITH_TEXT = 'machine-machine'
+MACHINE_ORGANIZATION_NAME = 'meta-machina'  # or other organization
+PRIVATE_REPO_WITH_TEXT = 'machina'
 
 try:
     gh = githf.connectto_repo(organization=MACHINE_ORGANIZATION_NAME,
                               repository_name=PRIVATE_REPO_WITH_TEXT,
                               private=True)
-    MACHINE_YAML = githf.read_file(repository=gh, file_path='texts_of_the_machine.yaml')
-    NAME_OF_THE_MACHINE = yaml.load(MACHINE_YAML, Loader=yaml.FullLoader)
+    MACHINE_YAML = githf.read_file(repository=gh, file_path='machina.yaml')
+    META_MACHINA = yaml.load(MACHINE_YAML, Loader=yaml.FullLoader)
 except Exception as e:
     with open('machina.yaml', 'r') as f:
-        NAME_OF_THE_MACHINE= ryaml.load(f)
-"""
-"""
+        META_MACHINA= ryaml.load(f)
 
 
 if __name__ == '__main__':
