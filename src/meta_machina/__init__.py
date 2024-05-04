@@ -5,6 +5,7 @@
 This source code is licensed under the license found in the
 LICENSE file in the root directory of this source tree.
 """
+import os
 import githf
 import yaml
 import ruamel.yaml as ryaml
@@ -20,7 +21,8 @@ try:
     MACHINE_YAML = githf.read_file(repository=gh, file_path='machina.yaml')
     META_MACHINA = yaml.load(MACHINE_YAML, Loader=yaml.FullLoader)
 except Exception as e:
-    with open('machina.yaml', 'r') as f:
+    machina_path = os.path.join(os.path.dirname(__file__), 'machina.yaml')
+    with open(machina_path, 'r') as f:
         META_MACHINA= ryaml.load(f)
 
 
