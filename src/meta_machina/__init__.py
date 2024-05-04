@@ -11,7 +11,7 @@ import yaml
 
 
 MACHINE_ORGANIZATION_NAME = 'meta-machina'  # or other organization
-PRIVATE_REPO_WITH_TEXT = 'machina'
+PRIVATE_REPO_WITH_TEXT = 'meta_machina'
 
 try:
     gh = githf.connectto_repo(organization=MACHINE_ORGANIZATION_NAME,
@@ -28,5 +28,5 @@ META_MACHINA= yaml.load(MACHINE_YAML, Loader=yaml.FullLoader)
 
 
 if __name__ == '__main__':
-    print('You have launched main')
+    print("You've launched main")
 
