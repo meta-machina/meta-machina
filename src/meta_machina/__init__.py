@@ -6,9 +6,8 @@ This source code is licensed under the license found in the
 LICENSE file in the root directory of this source tree.
 """
 import os
-from . import githf
+from .import githf
 import yaml
-import ruamel.yaml as ryaml
 
 
 MACHINE_ORGANIZATION_NAME = 'meta-machina'  # or other organization
@@ -23,7 +22,7 @@ try:
 except Exception as e:
     machina_path = os.path.join(os.path.dirname(__file__), 'machina.yaml')
     with open(machina_path, 'r') as f:
-        META_MACHINA= ryaml.load(f)
+        META_MACHINA= yaml.load(machina_path, Loader=yaml.FullLoader)
 
 
 if __name__ == '__main__':
